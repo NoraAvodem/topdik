@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>I Found</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="resetSelection()">
+    <main class="w-100 m-auto foundMain">
+          <h1 class="h3 mb-3 fw-normal text-center">Malumotlarni kiriting:</h1>
+    <form action="/found" class="text-center foundForm" method="post" enctype="multipart/form-data">
+        <div class="foundSpan"> Viloyatni tanlang: </div>
+        <select id="regionSelect" class=" foundSelect text-center" name="region"  onchange="makeSubmenu(this.value)" required>
+            <option value="" disabled selected>Viloyat</option>
+            <option>Andijan</option>
+            <option>Bukhara</option>
+            <option>Djizzak</option>
+            <option>Fergana</option>
+            <option>Kashkadarya</option>
+            <option>Khorezm</option>
+            <option>Namangan</option>
+            <option>Navoi</option>
+            <option>Samarkand</option>
+            <option>Surkhandarya</option>
+            <option>Syrdarya</option>
+            <option>Tashkent</option>
+            <option>TashkentCity</option>
+            <option>Karakalpakistan</option>
+        </select><br><br>
+        <div class="foundSpan"> Tumanni tanlang: </div>
+        <select name="city" id="citySelect" class="foundSelect text-center" size="1" required>
+            <option value="" disabled selected>Tuman</option>
+            <option></option>
+        </select><br><br>
+        <div class="foundSpan"> Kategoriyani tanlang: </div>
+        <select name="category" id="categorySelect" class=" foundSelect text-center" size="1" required>
+            <option value="" disabled selected>Kategoriya</option>
+            <option></option>
+        </select><br><br>
+
+
+        <div class="form-floating m-auto" >
+            <input name="comment" id="comment" type="text" class="form-control" placeholder="qisqacha malumot" required>
+            <label for="floatingInput">Habar</label>
+          </div>
+          <div class="form-floating m-auto">
+            <input name="phone" id="phone" type="text" class="form-control" placeholder="Telefon Raqam" required>
+            <label for="floatingPassword">Telefon</label>
+          </div><br>
+          <input class="btn btn-outline-secondary" type="file" id="image" name="image" value="" required>
+          <input type="checkbox" value="remember-me" required> Qoidalar bilan tanishdim.
+       <br><br>
+        <button class="btn btn-light btn-outline-primary" type="submit">Yuklash</button>
+    </form>
+</main>
+    <script src="index.js"></script>
+</body>
+</html>
