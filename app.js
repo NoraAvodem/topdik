@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.set('view engine', 'ejs');
 
-mongoose.connect("mongodb+srv://admin-bekki:Test123@cluster0.yi31cuu.mongodb.net/lostfound");
+mongoose.connect(process.env.MONGO_URL);
 
 
 var storage = multer.diskStorage({
